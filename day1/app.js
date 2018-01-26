@@ -21,9 +21,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 //set up bodyParser
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(bodyParser.json());
 
 app.use(session({
@@ -59,16 +57,6 @@ app.post('/users', (req, res) => {
     const userDB = new User();
     res.json({ users: userDB.add() })
 });
-
-
-
-
-
-
-
-
-
-
 
 app.get('/messages', (req, res) => {
     res.send('List meassage');
@@ -138,6 +126,12 @@ app.post('/signup', (req, res) => {
 });
 
 app.get('/dashboard', (req, res) => {
+    const contacts = [
+        {
+            username: '',
+            email: ''
+        }
+    ]
     if (!req.session.username) {
         res.redirect('/login');
     } else {
@@ -150,5 +144,3 @@ app.get('/login', (req, res) => {
 })
 
 app.listen(3000, () => { console.log('connect port 3000') });
-
-//const port = 8000;
