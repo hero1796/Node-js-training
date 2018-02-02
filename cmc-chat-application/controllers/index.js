@@ -3,7 +3,7 @@ import messagesController from './messages.controller';
 import signupController from './signup.controller';
 import dashboardController from './dashboard.controller';
 import loginController from './login.controller';
-
+import roomsController from './rooms.controller';
 
 export {
   usersController,
@@ -11,4 +11,5 @@ export {
   signupController,
   dashboardController,
   loginController,
+  roomsController
 };

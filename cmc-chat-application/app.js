@@ -13,6 +13,7 @@ import {
   dashboardController,
   signupController,
   loginController,
+  roomsController
 } from './controllers';
 
 const app = express();
@@ -55,6 +56,7 @@ app.use('/messages', messagesController);
 app.use('/dashboard', dashboardController);
 app.use('/signup', signupController);
 app.use('/login', loginController);
+app.use('/rooms', roomsController);
 
 // const { port, mongoDBUri } = config.env.dev;
 app.listen(8000, () => {
