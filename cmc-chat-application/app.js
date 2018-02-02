@@ -6,14 +6,15 @@ import flash from 'express-flash';
 import session from 'express-session';
 import mongoose from 'mongoose';
 import config from './global';
-
+import { applyPassportStrategy } from './passport';
 import {
   usersController,
   messagesController,
   dashboardController,
   signupController,
   loginController,
-  roomsController
+  roomsController,
+  identityController
 } from './controllers';
 
 const app = express();
@@ -57,7 +58,7 @@ app.use('/dashboard', dashboardController);
 app.use('/signup', signupController);
 app.use('/login', loginController);
 app.use('/rooms', roomsController);
-
+app.use('/identity', identityController);
 // const { port, mongoDBUri } = config.env.dev;
 app.listen(8000, () => {
   mongoose.connect('mongodb://localhost/test').then(() => {

@@ -14,10 +14,10 @@ export const validateEmail = (email) => {
  * if not, return false.
  * @param {*} password
  */
-export const validatePassword = password => password.length > 8;
+export const validatePassword = (password) => password.length > 8;
 
 /**
  * return hashed password followed sha256.
  * @param {*} password
  */
-export const generatehashedPassword = password => sha256(password);
+export const generatehashedPassword = (password) => sha256(password);

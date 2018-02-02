@@ -1,7 +1,6 @@
 import express from 'express';
 import { User, Room, Message } from './../db/models';
 import { pagingDefault, errors, underscoreId } from "../global";
-
 // hãy nhớ cái đoạn này
 const roomsController = express.Router();
 
@@ -73,7 +72,8 @@ roomsController.get('/:id', async (req, res) => {
 });
 
 roomsController.post('/', async(req, res) => {
-    const { room } = req.body;
+    const room = req.body;
+    console.log(room);
     if(!room) {
         res.status(400).json({
             code: 400,
